@@ -1,23 +1,15 @@
 <?php
 
-/*
- * Este arquivo é parte do Projeto maisarquivos
- * Autor:alangustavo
- */
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Factory\AppFactory;
+require 'vendor/autoload.php';
 
-require __DIR__ . '/vendor/autoload.php';
+$app = new \Slim\App;
+$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
+    $name = $args['name'];
+    $response->getBody()->write("Hello, $name");
 
-$app = AppFactory::create();
-
-$app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
     return $response;
 });
-
 $app->run();
-
-// ET
