@@ -1,0 +1,19 @@
+{
+    "name": "alangustavo/maisarquivos",
+    "description": "Sistema de Protocolo de Arquivos",
+    "autoload": {
+        "psr-4": {
+            "Alangustavo\\Maisarquivos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alan Gustavo Santana Ribeiro",
+            "email": "alan.gustavo@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6"
+    }
+}
