@@ -1,18 +1,32 @@
 {
     "name": "alangustavo/maisarquivos",
-    "description": "Sistema de Protocolo de Arquivos",
+    "description": "Sistema de Gestão de Documentos",
+    "type": "project",
+    "license": "Commercial",
     "autoload": {
         "psr-4": {
-            "Alangustavo\\Maisarquivos\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Alan Gustavo Santana Ribeiro",
+            "name": "Alan Gustavo",
             "email": "alan.gustavo@gmail.com"
         }
     ],
     "require": {
-        "slim/slim": "3.*"
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6",
+        "nyholm/psr7": "^1.5",
+        "nyholm/psr7-server": "^1.0",
+        "php-di/php-di": "^6.4",
+        "vlucas/phpdotenv": "^5.5",
+        "tuupola/slim-jwt-auth": "^3.6"
+    },
+    "config": {
+        "process-timeout": 0
+    },
+    "scripts": {
+        "start": "php -S localhost:8080 -t public_html/"
     }
 }
